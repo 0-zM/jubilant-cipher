@@ -6,56 +6,63 @@
         <title>Jubilant Cipher</title>
         <script async src="jubilant.js"></script>
         <style>
+            body {
+            }
+
             #everything {
+                max-width: 40em;
                 border: 1px solid #4aa01e;
                 padding: 3px;
                 background-color: #cbf2b7;
-                width: 405px;
+                font-size: 12px;
+                font-family: monospace;
+            }
+
+            #content {
             }
 
             #encrypted {
                 background-color: #9be575;
-                width: 404px;
+                max-width: 40em;
                 height: 180px;
-                font-size: 12px;
-                font-family: monospace;
             }
 
-            #base {
-                width: 400px;
+            #base { 
+                width: 99%;
                 height: 180px;
-                font-size: 12px;
-                font-family: monospace;
             }
 
             #replacements {
-                width: 296px;
-                font-family: monospace;
+                width: 73%;
             }
 
             #preset {
-                width: 95px
+                width: 23%;
             }
+
         </style>
     </head>
     <body>
         <div id="everything">
-            <input type="text" id="replacements" placeholder="Enter your encryption or use a preset" />
-            <select id="preset" name="Presets...">
-                <option value="empty">Presets...</option>
-                <option value="alphabet">Alphabet</option>
-                <option value="atbash">Atbash</option>
-                <option value="rot13">ROT13</option>
-                <option value="original">Original</option>
-                <option value="revised">Revised</option>
-            </select>
-            <br/>
-            <textarea type="text" id="base" placeholder="put your text to be encrypted here"></textarea>
-            <br/>
-            <button type="button" id="swap">
-                Swap original and encrypted
-            </button>
-            <div id="encrypted"></div>
+            <div id="content">
+                <input type="text" id="replacements" placeholder="Enter your encryption or use a preset" />
+                <select id="preset" name="Presets...">
+                    <option value="empty">Presets...</option>
+                    <option value="alphabet">Alphabet</option>
+                    <option value="atbash">Atbash</option>
+                    <option value="rot13">ROT13</option>
+                    <option value="original">Original</option>
+                    <option value="revised">Revised</option>
+                </select>
+                <br/>
+                <textarea type="text" id="base" placeholder="put your text to be encrypted here" cols="39"></textarea>
+                <br/>
+                <button type="button" id="swap">
+                    Swap original and encrypted
+                </button>
+                <br/>
+                <div id="encrypted"></div>
+            </div>
         </div>
     </body>
 </html>
