@@ -19,6 +19,17 @@ var presets = {
 
 var swapButton = document.getElementById("swap")
 
+function start() {
+    var parsedURL = new URL(window.location.href).searchParams
+    var isUnsafe = parsedURL.get("unsafe")
+
+    if (isUnsafe !== null) {
+        encryptedText.outerHTML = "<div id=\"encrypted\">"
+    }
+
+    updateReplacements()
+}
+
 function usePreset() {
     replacements.value = presets[presetMenu.value]
     updateReplacements()
@@ -78,7 +89,8 @@ function swapText() {
     encryptedText.innerHTML = oldOriginal
 }
 
-updateReplacements()
+start()
+
 replacements.addEventListener("input", updateReplacements)
 baseText.addEventListener("input", updateText)
 presetMenu.addEventListener("change", usePreset)
